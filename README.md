@@ -4,6 +4,12 @@
 
 ---
 
+## VIDEO DEMO AND REPORT
+**Google Drive (video demo + executive report):**  
+**https://drive.google.com/drive/folders/1wpBhBPWPGfS1d_jK2KBWfPmpci0pJu8O?usp=drive_link**
+
+---
+
 ## Business Problem
 
 Conut is a growing Lebanese sweets and beverages chain with four active branches:
