@@ -1,0 +1,439 @@
+% ============================================================
+%  Conut AI Chief of Operations Agent — Executive Brief
+%  EECE 503N Hackathon · February 2026
+% ============================================================
+\documentclass[10pt,a4paper]{article}
+
+% ── Packages ──────────────────────────────────────────────
+\usepackage[a4paper, top=1.6cm, bottom=1.6cm, left=1.8cm, right=1.8cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{parskip}
+\usepackage[hidelinks]{hyperref}
+
+% ── Brand colours ─────────────────────────────────────────
+\definecolor{conutbrown}{RGB}{111,78,55}
+\definecolor{conutgold}{RGB}{200,145,58}
+\definecolor{lightcream}{RGB}{247,243,238}
+\definecolor{alertred}{RGB}{192,57,43}
+\definecolor{signalgreen}{RGB}{39,174,96}
+\definecolor{sectionblue}{RGB}{45,90,142}
+\definecolor{lightgray}{RGB}{245,245,245}
+\definecolor{bordergray}{RGB}{210,210,210}
+
+% ── Section styling ───────────────────────────────────────
+\titleformat{\section}{\normalfont\bfseries\color{conutbrown}}{}{0em}{}%
+  [\vspace{-4pt}\color{conutgold}\rule{\linewidth}{1.2pt}]
+\titlespacing{\section}{0pt}{8pt}{4pt}
+
+% ── Header / footer ───────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{\footnotesize\color{conutbrown}\textbf{Conut AI Chief of Operations Agent}}
+\fancyhead[R]{\footnotesize\color{gray}Executive Brief \textbar\ EECE 503N Hackathon}
+\fancyfoot[C]{\footnotesize\color{gray}\thepage}
+
+% ── Finding sidebar box ───────────────────────────────────
+\newmdenv[
+  linecolor=conutbrown, linewidth=2.5pt,
+  topline=false, rightline=false, bottomline=false,
+  backgroundcolor=lightcream,
+  innerleftmargin=8pt, innerrightmargin=6pt,
+  innertopmargin=5pt, innerbottommargin=5pt,
+  skipabove=3pt, skipbelow=3pt
+]{finding}
+
+\newmdenv[
+  linecolor=signalgreen, linewidth=2.5pt,
+  topline=false, rightline=false, bottomline=false,
+  backgroundcolor=green!4,
+  innerleftmargin=8pt, innerrightmargin=6pt,
+  innertopmargin=5pt, innerbottommargin=5pt,
+  skipabove=3pt, skipbelow=3pt
+]{goodbox}
+
+\newmdenv[
+  linecolor=alertred, linewidth=2.5pt,
+  topline=false, rightline=false, bottomline=false,
+  backgroundcolor=red!4,
+  innerleftmargin=8pt, innerrightmargin=6pt,
+  innertopmargin=5pt, innerbottommargin=5pt,
+  skipabove=3pt, skipbelow=3pt
+]{riskbox}
+
+% Screenshot placeholder: \screenshotbox{Title}{Caption}{extra vertical padding}
+\newcommand{\screenshotbox}[3]{%
+  \vspace{3pt}%
+  \begin{mdframed}[
+    linecolor=bordergray, linewidth=1pt,
+    backgroundcolor=lightgray,
+    innerleftmargin=8pt, innerrightmargin=8pt,
+    innertopmargin=#3, innerbottommargin=#3,
+    skipabove=2pt, skipbelow=2pt
+  ]
+  \centering
+  \textcolor{gray}{\small\textbf{#1}\\[3pt]\textit{\footnotesize #2}}%
+  \end{mdframed}%
+  \vspace{3pt}%
+}
+
+% Compact bullet list
+\newlist{cbullet}{itemize}{1}
+\setlist[cbullet]{label=\textcolor{conutgold}{\textbullet},
+  leftmargin=12pt, itemsep=0pt, topsep=2pt, parsep=0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{14pt}
+
+% ============================================================
+\begin{document}
+
+% ── TITLE BLOCK ───────────────────────────────────────────
+\begin{mdframed}[
+  linecolor=conutbrown, linewidth=0pt,
+  backgroundcolor=conutbrown,
+  innerleftmargin=14pt, innerrightmargin=14pt,
+  innertopmargin=10pt, innerbottommargin=10pt,
+  skipabove=0pt, skipbelow=6pt
+]
+\color{white}
+{\Large\bfseries Conut AI Chief of Operations Agent}\\[3pt]
+{\small CEO-ready executive brief
+  \textbar\ 4 branches
+  \textbar\ 5 operational objectives
+  \textbar\ February 2026}\\[4pt]
+{\footnotesize\color{lightcream}EECE 503N Hackathon \textbar\ Prepared for demo day}
+\end{mdframed}
+
+% ── QUICK-STATS STRIP ─────────────────────────────────────
+\renewcommand{\arraystretch}{1.0}
+\begin{tabularx}{\linewidth}{*{5}{>{\centering\arraybackslash}X}}
+\cellcolor{conutgold!15}\textbf{\large 4}     &
+\cellcolor{lightcream}\textbf{\large 5}        &
+\cellcolor{conutgold!15}\textbf{\large 7+}     &
+\cellcolor{lightcream}\textbf{\large 172.4}    &
+\cellcolor{conutgold!15}\textbf{\large 0 API}  \\
+\cellcolor{conutgold!15}\tiny\color{gray} BRANCHES ANALYSED &
+\cellcolor{lightcream}\tiny\color{gray} AI MODELS           &
+\cellcolor{conutgold!15}\tiny\color{gray} STAFFING ALERTS   &
+\cellcolor{lightcream}\tiny\color{gray} TOP LOCATION SCORE  &
+\cellcolor{conutgold!15}\tiny\color{gray} COST TO DEPLOY    \\
+\end{tabularx}
+\vspace{4pt}
+
+% ── PLATFORM DESCRIPTION ──────────────────────────────────
+\begin{mdframed}[
+  linecolor=conutgold, linewidth=1pt,
+  backgroundcolor=lightcream,
+  innerleftmargin=10pt, innerrightmargin=10pt,
+  innertopmargin=5pt, innerbottommargin=5pt,
+  skipabove=2pt, skipbelow=4pt
+]
+\small
+\textbf{\color{conutbrown}Operational Platform (live and deployable)}
+\hfill
+\texttt{\footnotesize\color{sectionblue}start\_api.bat \quad|\quad start\_dashboard.bat}
+
+\medskip
+\begin{tabular}{@{} l p{13cm} @{}}
+\textcolor{conutgold}{\textbullet}\,\textbf{Dashboard:}  &
+  Streamlit multi-page BI dashboard — 6 report pages + interactive AI agent page \\
+\textcolor{conutgold}{\textbullet}\,\textbf{Backend API:} &
+  FastAPI with 8 REST endpoints (\texttt{/combo}, \texttt{/demand}, \texttt{/expansion},
+  \texttt{/staffing}, \texttt{/strategy}, \texttt{/overview}, \texttt{/query}, \texttt{/health}) \\
+\textcolor{conutgold}{\textbullet}\,\textbf{AI Agent:}   &
+  Local rule-based Q\&A (zero API cost, works offline, deploy-ready);
+  optionally upgrades to Google Gemini 2.5 Flash via \texttt{.env} — no code changes \\
+\textcolor{conutgold}{\textbullet}\,\textbf{Models:}     &
+  Apriori · Linear Regression · Multi-signal heuristic · Headcount buffer · Segment share analysis \\
+\textcolor{conutgold}{\textbullet}\,\textbf{Data:}       &
+  9 report-style POS CSVs auto-parsed (header stripping, copyright removal, comma-number normalisation) \\
+\end{tabular}
+\end{mdframed}
+
+% ── PROBLEM STATEMENT ─────────────────────────────────────
+\section{Problem Statement}
+
+Conut — a Lebanese sweets and beverage chain with four branches (Conut, Conut-Tyre, Conut Jnah,
+Main Street Coffee) — had strong brand presence but no structured system for operational
+decision-making. Branch managers made roster, inventory, and promotion decisions without data,
+while leadership lacked a single view of network health. Five specific blindspots drove
+unnecessary cost and lost revenue: unoptimised product bundles, no demand forecast,
+no expansion readiness framework, chronic understaffing on specific shifts, and underperforming
+beverage revenue relative to industry benchmarks. We built a complete AI-powered Operations
+Intelligence platform to close all five gaps simultaneously, producing a CEO-ready report and
+an interactive dashboard that runs on live POS data with a single command.
+
+% ── KEY FINDINGS ──────────────────────────────────────────
+\section{Key Findings}
+
+\begin{finding}
+\small
+\textbf{Objective 1 — Product Combo Optimization (Apriori Association Rules)}\\
+Delivery basket data mined with Apriori. \textbf{10 association rules} identified;
+\textbf{4 combos with lift $\geq$2.0$\times$} qualify as prime bundle candidates.
+Strongest pair: \textbf{lift 3.23$\times$}, \textbf{60\% cross-purchase confidence}.
+A 5\% bundle discount recovers margin within 2--3 units through basket uplift.
+\end{finding}
+
+\vspace{2pt}
+
+\begin{finding}
+\small
+\textbf{Objective 2 — Demand Forecasting by Branch (Linear Regression + Confidence Bands)}\\
+Monthly sales modelled per branch with 3--12-month projection horizon.
+\textbf{Main Street Coffee} leads at \textbf{4.49M units/month} projected.
+\textbf{60\% demand gap} between top and bottom branch signals uneven market penetration
+and asymmetric resource needs. Growing branches flagged for inventory pre-positioning;
+declining branches flagged for root-cause investigation.
+\end{finding}
+
+\vspace{2pt}
+
+\begin{finding}
+\small
+\textbf{Objective 3 — Expansion Feasibility (3-signal Model + 10-location Composite Scoring)}\\
+Three binary signals: network growth $>$1\%/month, saturation $>$40\% revenue at one branch,
+customer density $>$500 network-wide. \textbf{Verdict: RECOMMENDED} — all 3 signals met.
+10 Beirut-area locations scored: demand $\times$ growth factor $-$ (competition risk $\times$ 0.3).
+\textbf{Top candidate: Verdun} (composite score \textbf{172.4}). Next step: site survey.
+\end{finding}
+
+\vspace{2pt}
+
+\begin{finding}
+\small
+\textbf{Objective 4 — Shift Staffing Optimization (Mean $\times$ 1.15 Safety Buffer)}\\
+Punch-in/out logs aggregated by branch $\times$ shift $\times$ date across 7 branch-shift slots.
+\textbf{7 at-risk shifts} have recorded minimum headcounts below 2 staff.
+Recommended daily network total: \textbf{15 staff}. Single-staff shifts create service failure,
+burnout, and compliance risk — requiring immediate roster correction.
+\end{finding}
+
+\vspace{2pt}
+
+\begin{finding}
+\small
+\textbf{Objective 5 — Beverage Revenue Growth (Segment Share \& Benchmarking)}\\
+Combined beverage share: \textbf{5.9\%} (coffee 3.4\% + milkshake 2.6\%).
+Industry benchmark for specialty café-bakery: \textbf{35\%} — a \textbf{29.1pp gap}.
+Underperforming branches identified at item level; 5 ranked strategies generated with timelines.
+\end{finding}
+
+\vspace{2pt}
+
+\begin{finding}
+\small
+\textbf{Additive Feature — AI Operations Agent (Local Rule-based + Optional Gemini)}\\
+Natural-language Q\&A embedded in the dashboard — no API key or internet required.
+The \textbf{local agent} classifies questions across all 5 objective domains using keyword scoring,
+runs the relevant model, and returns structured markdown answers with real numbers from live data.
+\texttt{GEMINI\_API\_KEY} in \texttt{.env} seamlessly upgrades to \textbf{Google Gemini 2.5 Flash};
+\texttt{/health} exposes \texttt{agent\_mode: local|gemini} so the dashboard self-configures.
+\end{finding}
+
+\vspace{4pt}
+
+% ── SCREENSHOT ROW 1 ──────────────────────────────────────
+\begin{multicols}{2}
+\screenshotbox%
+  {Figure 1: COO Briefing — Network Health Scorecard}%
+  {KPI cards + demand ranking bar chart + priority action board}%
+  {30pt}
+\columnbreak
+\screenshotbox%
+  {Figure 2: Combo Optimization — Apriori Lift Chart}%
+  {Association lift bars with 2.0$\times$ threshold line + confidence vs.\ lift scatter}%
+  {30pt}
+\end{multicols}
+
+% ============================================================
+\newpage
+% ============================================================
+
+% ── RECOMMENDATIONS TABLE ─────────────────────────────────
+\section{Recommended Actions}
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{} c >{\bfseries}p{2.3cm} X p{4.0cm} @{}}
+\toprule
+\rowcolor{conutbrown}
+\textcolor{white}{\#} &
+\textcolor{white}{Timeline} &
+\textcolor{white}{Action} &
+\textcolor{white}{Expected Impact} \\
+\midrule
+\rowcolor{red!8}
+1 & This week &
+Re-roster all 7 at-risk shifts to minimum 2 staff before next operating day;
+use model recommended headcounts as the new baseline. &
+Service risk eliminated; compliance exposure removed \\
+\rowcolor{yellow!10}
+2 & This week &
+Activate top bundle (lift 3.23$\times$) in delivery app and at POS at 5--8\% combined discount. &
++15\% avg delivery basket size \\
+\rowcolor{yellow!10}
+3 & This month &
+Launch ``Coffee Drive'' at underperforming branches: barista training, menu prominence,
+off-peak happy hour 14:00--17:00 Mon--Thu. &
++3--5pp coffee revenue share \\
+\rowcolor{green!8}
+4 & This month &
+Commission Verdun site survey and lease feasibility study. Run in parallel with bev.\ campaign. &
+Opens path to 5th branch; first-mover advantage \\
+\rowcolor{green!8}
+5 & This quarter &
+Milkshake seasonal SKU programme at low-share branches. Limited-edition flavours for trial. &
++10--20\% milkshake volume \\
+\rowcolor{green!8}
+6 & This quarter &
+Monthly demand review cadence: re-run forecast on new POS export; adjust inventory buffers. &
+Fewer stockouts at high-demand branches \\
+\bottomrule
+\end{tabularx}
+
+\vspace{6pt}
+
+% ── EXPECTED IMPACT ───────────────────────────────────────
+\section{Expected Impact}
+
+\begin{goodbox}
+\small
+If Conut executes the top actions, the principal gains are:
+
+\medskip
+\begin{tabular}{@{} p{4.5cm} p{6.5cm} p{3.5cm} @{}}
+\textbf{Lever} & \textbf{Mechanism} & \textbf{Gain} \\
+\hline
+Bundle activation     & Lift 3.23$\times$ combo at 5\% discount           & +15\% basket size \\
+Staffing correction   & Re-roster 7 at-risk shifts                       & Risk eliminated \\
+Coffee Drive          & Training + menu at underperforming branches       & +3--5pp bev share \\
+5th branch (Verdun)   & Site survey $\to$ lease $\to$ opening             & New revenue stream \\
+Milkshake SKU rollout & Seasonal menu at low-share branches               & +10--20\% volume \\
+\end{tabular}
+
+\medskip
+Closing the \textbf{29.1pp beverage gap} to the 35\% industry benchmark is the single largest
+near-term revenue lever — requiring zero capital, only training, menu sequencing, and promotional activation.
+Even at a conservative 50\% capture rate, the combined beverage uplift meaningfully shifts the
+revenue mix toward higher-margin products.
+\end{goodbox}
+
+\vspace{4pt}
+
+% ── RISK / LIMITATIONS ────────────────────────────────────
+\begin{riskbox}
+\small
+\textbf{Model limitations:}
+Demand forecast uses linear regression on a limited time window (no seasonality decomposition without Prophet).
+Expansion signals use calibrated heuristics, not geodemographic data.
+Staffing model assumes stationarity of shift patterns; re-calibrate after roster changes.
+Combo rules require minimum basket density — sparse delivery data may fall below Apriori's support threshold.
+Local agent is keyword-based; complex multi-turn reasoning requires the Gemini upgrade.
+\end{riskbox}
+
+\vspace{4pt}
+
+% ── METHODOLOGY ───────────────────────────────────────────
+\section{Methodology}
+
+\begin{multicols}{2}
+\small
+\textbf{Data Engineering}\\
+9 report-style POS CSV files parsed. Each contains repeated page headers, copyright footers,
+comma-formatted numbers, and hierarchical metadata. Custom per-file loaders strip non-data rows,
+reconstruct the branch/division/group hierarchy, and produce clean analytical DataFrames
+(\texttt{on\_bad\_lines=`skip'}, \texttt{engine=`python'}).
+
+\vspace{4pt}
+\textbf{Analytical Models}
+\begin{cbullet}
+\item \textbf{Combo:} Apriori (mlxtend); configurable min-support and min-lift;
+      falls back to top-item ranking if basket density is too low.
+\item \textbf{Demand:} Per-branch linear regression; point forecast + 90\% bounds;
+      up to 12-month horizon; growth trend classification.
+\item \textbf{Expansion:} 3 binary signals; composite location score =
+      demand $\times$ growth factor $-$ competition risk $\times$ 0.3.
+\item \textbf{Staffing:} Mean headcount per (branch, shift) $\times$ 1.15,
+      capped at observed max; flags min $<$ 2.
+\item \textbf{Beverage:} Segment share vs.\ benchmarks (20\% coffee / 10\% shake /
+      35\% combined); branch-level gap ranking; 5 prioritised strategies.
+\end{cbullet}
+
+\columnbreak
+
+\textbf{AI Agent Architecture}\\
+Two-tier design. (1) \textit{Local agent}: keyword scoring across 5 topic buckets,
+runs relevant model, returns structured markdown — instant, no internet.
+(2) \textit{Gemini 2.5 Flash}: injected via \texttt{.env}; \texttt{/query} endpoint
+auto-selects tier; \texttt{/health} exposes \texttt{agent\_mode: local|gemini}.
+
+\vspace{4pt}
+\textbf{Productisation}
+\begin{cbullet}
+\item FastAPI — 8 endpoints, numpy-safe JSON, CORS-enabled
+\item Streamlit — 7 pages, full CSS design system, Plotly charts
+\item One-command startup: \texttt{start\_api.bat} + \texttt{start\_dashboard.bat}
+\item OpenClaw skill — all endpoints exposed as a Claude Code skill
+\end{cbullet}
+
+\vspace{4pt}
+\textbf{Reproducibility}\\
+{\footnotesize\texttt{pip install -r requirements.txt}}\\
+{\footnotesize\texttt{start\_api.bat}}\\
+{\footnotesize\texttt{start\_dashboard.bat}}
+\end{multicols}
+
+\vspace{4pt}
+
+% ── SCREENSHOT ROW 2 ──────────────────────────────────────
+\begin{multicols}{2}
+\screenshotbox%
+  {Figure 3: Expansion — Signal Analysis \& Location Scoring}%
+  {3 signal verdict cards + composite score chart + top-3 location recommendations}%
+  {30pt}
+\columnbreak
+\screenshotbox%
+  {Figure 4: Ask the Agent — Local Agent Response}%
+  {Natural-language question + structured markdown answer with real operational data}%
+  {30pt}
+\end{multicols}
+
+\vspace{3pt}
+
+\begin{multicols}{2}
+\screenshotbox%
+  {Figure 5: Shift Staffing — Recommended vs.\ Historical Headcount}%
+  {Grouped bar chart (recommended vs.\ mean) + min/max range plot + at-risk alerts}%
+  {30pt}
+\columnbreak
+\screenshotbox%
+  {Figure 6: Beverage Growth — Segment Share \& Strategy Playbook}%
+  {Donut chart (network segments) + stacked bar (per-branch share) + strategy cards}%
+  {30pt}
+\end{multicols}
+
+\vspace{4pt}
+
+% ── FOOTER ────────────────────────────────────────────────
+\begin{center}
+\footnotesize\color{gray}
+\textit{Prepared for EECE 503N Hackathon \textbar\ February 2026 \textbar\
+All analytics run on Conut POS exports \textbar\ No external services required}
+\end{center}
+
+\end{document}
