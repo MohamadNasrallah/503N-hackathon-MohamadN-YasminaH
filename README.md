@@ -10,6 +10,12 @@
 
 ---
 
+## PUBLIC UI
+**Live app:**  
+**https://503n-hackathon-mohamadn-yasminah-production.up.railway.app/**
+
+---
+
 ## Business Problem
 
 Conut is a growing Lebanese sweets and beverages chain with four active branches:
