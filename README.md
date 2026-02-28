@@ -219,6 +219,8 @@ This section maps directly to the required submission items in `CONUT_AI_ENGINEE
   - `evidence/api_invocation_log.png`
   - `evidence/backend_docs_or_health.png`
   - `evidence/demo.mp4` (optional, strongly recommended)
+- Submission folder (report + video evidence):
+  - https://drive.google.com/drive/folders/1wpBhBPWPGfS1d_jK2KBWfPmpci0pJu8O?usp=drive_link
 
 ---
 
